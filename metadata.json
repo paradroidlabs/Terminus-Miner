@@ -1,0 +1,5 @@
+{
+  "name": "TERMINUS - Asteroid Miner (React)",
+  "description": "A top-down roguelite space shooter built with React. Survive waves of enemies, mine asteroids, and upgrade your ship to survive the TERMINUS.",
+  "requestFramePermissions": []
+}
