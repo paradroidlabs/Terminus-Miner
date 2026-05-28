@@ -14,7 +14,7 @@ const gatling: IWeapon = {
     projectileChar: '.',
     projectileColor: '#FFFF00',
     fire: (player, mouse, entities, context) => {
-        entities.projectiles.push(new Projectile(
+        console.log("[GAME EVENT] Player fired projectile!"); entities.projectiles.push(new Projectile(
             player.x, player.y,
             mouse.x, mouse.y,
             player.loadout.primary.damage,
@@ -51,7 +51,7 @@ const pulseCannon: IWeapon = {
             entities.projectiles.push(p);
         } else {
             // NORMAL TAP SHOT
-            entities.projectiles.push(new Projectile(
+            console.log("[GAME EVENT] Player fired projectile!"); entities.projectiles.push(new Projectile(
                 player.x, player.y,
                 mouse.x, mouse.y,
                 player.loadout.primary.damage,
@@ -160,7 +160,7 @@ const novaBurst: IUltimate = {
             const angle = (i / numProjectiles) * 2 * Math.PI;
             const targetX = player.x + Math.cos(angle) * 100; // Arbitrary distance
             const targetY = player.y + Math.sin(angle) * 100;
-             entities.projectiles.push(new Projectile(
+             console.log("[GAME EVENT] Player fired projectile!"); entities.projectiles.push(new Projectile(
                 player.x, player.y,
                 targetX, targetY,
                 player.loadout.primary.damage * 0.75, // Ultimate projectile does % of weapon damage
