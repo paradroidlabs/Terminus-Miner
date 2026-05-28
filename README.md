@@ -1,16 +1,14 @@
 # Terminus - Asteroid Miner
 
-![Terminus Banner](https://ai.google.dev/static/site-assets/images/share-ais-513315318.png)
 
 > **Terminus** is an intense, twin-stick style survival game built with React, TypeScript, and HTML5 Canvas. You play as a miner ambushed by hostile forces, forced to fight for survival using an array of weapons, abilities, and upgrades.
 
 ## 📸 Screenshots
 
-*
 
 | Main Menu | Gameplay | Upgrades |
 | :---: | :---: | :---: |
-| <img src="public/screenshots/main_menu.png" alt="Main Menu Screenshot" width="300" /> | <img src="public/screenshots/gameplay.png" alt="Gameplay Screenshot" width="300" /> | <img src="public/screenshots/gameplay.png" alt="Upgrade Screenshot" width="300" /> |
+| <img src="public/screenshots/main_menu.png" alt="Main Menu Screenshot" width="300" /> | <img src="public/screenshots/gameplay_advanced.png" alt="Gameplay Advanced Screenshot" width="300" /> | <img src="public/screenshots/gameplay_ability.png" alt="Gameplay Ability Screenshot" width="300" /> |
 
 
 ## 🚀 Features
