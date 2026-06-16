@@ -1,0 +1,26 @@
+CONSOLE: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation
+CONSOLE: [vite] connecting...
+CONSOLE: [vite] connected.
+CONSOLE: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player took 10 damage from enemy!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player took 10 damage from enemy!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!
+CONSOLE: [GAME EVENT] Player fired projectile!

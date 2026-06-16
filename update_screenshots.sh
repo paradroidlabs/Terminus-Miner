@@ -1,0 +1,2 @@
+sed -i 's|<img src="public/screenshots/gameplay.png" alt="Gameplay Screenshot" width="300" />|<img src="public/screenshots/gameplay_advanced.png" alt="Gameplay Advanced Screenshot" width="300" />|g' README.md
+sed -i 's|<img src="public/screenshots/gameplay.png" alt="Upgrade Screenshot" width="300" />|<img src="public/screenshots/gameplay_ability.png" alt="Gameplay Ability Screenshot" width="300" />|g' README.md

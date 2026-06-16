@@ -159,7 +159,7 @@ export default function useGameEngine({ gameStatus, onGameOver, onLevelUp, onRes
             if (p.shield && timestamp - p.shield.lastFireTime > p.shield.fireRate) { p.shield.lastFireTime = timestamp; let closestEnemy: Enemy | null = null; let minDistance = Infinity; e.enemies.forEach(enemy => { const dist = hypot(p.shield!.x - enemy.x, p.shield!.y - enemy.y); if (dist < minDistance && dist < 400) { minDistance = dist; closestEnemy = enemy; } }); if (closestEnemy) { e.projectiles.push(new ArcBolt(p.shield.x, p.shield.y, closestEnemy, e.enemies, p.loadout.primary.damage / 2, p.shield.arcBounces, p.shield.arcProjectileSpeed)); } }
 
             // Abilities
-            if (input.current.keys.has('shift') && p.abilityCharge >= p.loadout.ability.maxCharge) { p.abilityCharge = 0; p.loadout.ability.activate(p, e, kills); }
+            if (input.current.keys.has('shift') && p.abilityCharge >= p.loadout.ability.maxCharge) { p.abilityCharge = 0; console.log("[GAME EVENT] Player activated ability: " + p.loadout.ability.name); p.loadout.ability.activate(p, e, kills); }
             if (input.current.keys.has(' ') && p.ultimateCharge >= p.loadout.ultimate.maxCharge) { p.ultimateCharge = 0; p.loadout.ultimate.activate(p, e); }
             
             // Entity updates & filtering
@@ -223,9 +223,9 @@ export default function useGameEngine({ gameStatus, onGameOver, onLevelUp, onRes
             }
 
             // Player vs Enemies
-            for (let i = e.enemies.length - 1; i >= 0; i--) { const en = e.enemies[i]; if (en && hypot(p.x - en.x, p.y - en.y) < p.radius + en.radius) { p.takeDamage(10); e.enemies.splice(i, 1); if (p.health <= 0) onGameOver(kills.current, gameTime.current); } }
+            for (let i = e.enemies.length - 1; i >= 0; i--) { const en = e.enemies[i]; if (en && hypot(p.x - en.x, p.y - en.y) < p.radius + en.radius) { console.log("[GAME EVENT] Player took 10 damage from enemy!"); p.takeDamage(10); e.enemies.splice(i, 1); if (p.health <= 0) onGameOver(kills.current, gameTime.current); } }
             // Player vs Enemy Projectiles
-            for (let i = e.enemyProjectiles.length - 1; i >= 0; i--) { const ep = e.enemyProjectiles[i]; if (ep && hypot(p.x - ep.x, p.y - ep.y) < p.radius + ep.radius) { p.takeDamage(ep.damage); e.enemyProjectiles.splice(i, 1); if (p.health <= 0) onGameOver(kills.current, gameTime.current); } }
+            for (let i = e.enemyProjectiles.length - 1; i >= 0; i--) { const ep = e.enemyProjectiles[i]; if (ep && hypot(p.x - ep.x, p.y - ep.y) < p.radius + ep.radius) { console.log("[GAME EVENT] Player took " + ep.damage + " damage from projectile!"); p.takeDamage(ep.damage); e.enemyProjectiles.splice(i, 1); if (p.health <= 0) onGameOver(kills.current, gameTime.current); } }
             // Player vs Orbs/Resources
             for (let i = e.orbs.length - 1; i >= 0; i--) { const o = e.orbs[i]; if(o && hypot(p.x - o.x, p.y - o.y) < p.radius + o.radius + 30){ p.xp += o.value; if(p.abilityCharge < p.loadout.ability.maxCharge) p.abilityCharge += o.value; e.orbs.splice(i, 1); } }
             for (let i = e.resources.length - 1; i >= 0; i--) { const r = e.resources[i]; if(r && hypot(p.x - r.x, p.y - r.y) < p.radius + r.radius + 30){ p.resources += r.value; e.resources.splice(i, 1); } }
